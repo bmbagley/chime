@@ -1,5 +1,5 @@
 FROM python:3.7.7-slim-buster
-ENV PARAMETERS=./defaults/webapp.cfg
+ENV PARAMETERS=./defaults/cli.cfg
 WORKDIR /app
 COPY README.md .
 COPY setup.cfg .
@@ -9,5 +9,6 @@ COPY defaults defaults
 COPY src src
 RUN pip install -q .
 
-CMD ["streamlit", "run", "src/app.py"]
+# CMD ["streamlit", "run", "src/app.py"]
+CMD ["penn_chime"]
 
