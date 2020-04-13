@@ -136,6 +136,7 @@ VALIDATORS = {
     "ventilated": ValDisposition,
     "hospitalized": ValDisposition,
     "icu": ValDisposition,
+    "writepath":OptionalValue,
 }
 
 
@@ -160,6 +161,7 @@ HELP = {
     "relative_contact_rate": "Social distancing reduction rate: 0.0 - 1.0",
     "ventilated_days": "Average days on ventilator",
     "ventilated_rate": "Ventilated Rate: 0.0 - 1.0",
+    "writepath": "Path to write outputs",
 }
 
 
@@ -297,6 +299,13 @@ ARGS = (
         1.0,
         True,
     ),
+    (
+        "writepath",
+        str,
+        None,
+        None,
+        False,
+    ),
 )
 
 
@@ -395,6 +404,7 @@ class Parameters:
         self.relative_contact_rate = None
         self.recovered = None
         self.ventilated = None
+        self.writepath = None
 
         passed_and_default_parameters = {}
         for key, value in kwargs.items():

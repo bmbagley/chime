@@ -17,7 +17,7 @@ def main():
         (m.admits_df, "projected_admits"),
         (m.census_df, "projected_census"),
     ):
-        df.to_csv(f"{p.current_date}_{name}.csv")
+        df.to_csv(f"{p.writepath}/{p.current_date}_{name}.csv")
 
 
 if __name__ == "__main__":
